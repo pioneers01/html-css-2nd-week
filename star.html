@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>star</title>
+</head>
+<body>
+	<p id="pp" style="text-align:center">
+		
+	</p>
+	<script>
+		for(i=0;i<11;i++){
+			var pp=document.getElementById("pp");
+		    var span=document.createElement("span");
+		    span.style.display="block";
+			for(j=0;j<11-i;j++){
+		        span.appendChild(document.createTextNode("* "));
+		        span.appendChild(document.createTextNode(" "));
+		        pp.appendChild(span);
+			}
+		}
+	</script>
+</body>
+</html>

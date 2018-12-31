@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>math</title>
+</head>
+<body>
+	<p>
+		
+	</p>
+	<script>
+		var pp =document.getElementsByTagName("p")[0];
+		for(i=1;i<10;i++){
+			var span =document.createElement("span");
+			var span1 =document.createElement("span");
+			span.style.display="block";
+			span.style.whiteSpace='pre';
+			for(j=1;j<i+1;j++){
+				span.appendChild(document.createTextNode(j));
+				span.appendChild(document.createTextNode("*"));
+				span.appendChild(document.createTextNode(i));
+				span.appendChild(document.createTextNode("="));
+				span.appendChild(document.createTextNode(i*j));
+				span.appendChild(document.createTextNode('   '));
+				pp.appendChild(span);
+				//pp.appendChild(span1);
+			}
+			
+		}
+	</script>
+</body>
+</html>

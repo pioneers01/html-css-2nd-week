@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float</title>
+	<style>
+		.bigbox{
+			margin: 0 auto;
+			width:600px;
+			text-align:center;
+		}
+		#bigbox .float{
+			float:left;
+		}
+		#bigbox .clear:after{
+			display:block;
+			content:"";
+			height:0px;
+			clear:both;
+		}
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+		.box-top{
+			margin: 0 auto;
+			width:400px;
+		}
+		.box-top>.tr1 .float{
+			width:100px;
+			height:100px;
+		}
+		.box-top>.tr1 .td2{
+			width:200px;
+		}
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+		.box-top>.tr2>.td2>.tr1 div,.box-top>.tr2>.td2>.tr2 div{
+			width:100px;
+			height:100px;
+		}
+		.box-top>.tr2>.td1{
+			height:200px;
+			width:100px;
+		}
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+		.box-top>.tr3>.td1,.box-top>.tr3>.td2{
+			height:200px;
+			width:100px;
+		}
+		.box-top>.tr3>.td3>.tr1{
+			height:100px;
+			width:200px;
+		}
+		.box-top>.tr3>.td3>.tr2 div{
+			height:100px;
+			width:100px;
+		}
+/*aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+		.box-bottom div{
+			float:left;
+			height:100px;
+			width:100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="bigbox" id="bigbox">
+		<div class="box-top">
+			<div class="tr1 clear">
+				<div class="td1 float box"></div>
+				<div class="td2 float box"></div>
+				<div class="td3 float box"></div>
+			</div>
+			<div class="tr2 clear">
+				<div class="td1 float box"></div>
+				<div class="td2  float">
+					<div class="tr1 clear">
+						<div class="td1 float box"></div>
+						<div class="td2 float box"></div>
+						<div class="td3 float box"></div>
+					</div>
+					<div class="tr2 clear">
+						<div class="td1 float box"></div>
+						<div class="td2 float box"></div>
+						<div class="td3 float box"></div>
+					</div>
+				</div>
+			</div>
+			<div class="tr3 clear">
+				<div class="td1 float box"></div>
+				<div class="td2 float box"></div>
+				<div class="td3 float">
+					<div class="tr1 box"></div>
+					<div class="tr2 box clear">
+						<div class="td1 float box"></div>
+						<div class="td2 float box"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box-bottom clear">
+			<div class="td1"></div>
+			<div class="td2"></div>
+			<div class="td3"></div>
+			<div class="td4"></div>
+			<div class="td5"></div>
+			<div class="td6"></div>
+		</div>
+	</div>
+</body>
+<script>
+	var divAll = document.getElementsByTagName("div");
+	for(i=1;i<divAll.length;i++){
+		var num=parseInt(Math.random()*210)+30;
+		//console.log(num);
+		num=num.toString(16);
+		divAll[i].style.background="#"+num+num+num;
+		console.log("#"+num+num+num);
+	}
+</script>
+</html>
